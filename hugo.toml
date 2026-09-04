@@ -1,0 +1,4 @@
+baseurl = 'https://glorichi.github.io/'
+languagecode = 'zh-cn'
+title = '我的个人博客'
+theme = 'papermod'
