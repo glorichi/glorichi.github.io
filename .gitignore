@@ -5,3 +5,6 @@ public/
 
 # OS files
 .DS_Store
+
+# Personal notes
+instruction.md
