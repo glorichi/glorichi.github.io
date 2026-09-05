@@ -1,0 +1,27 @@
+{{- $dir := .Get "dir" | default "img" -}}
+{{- $cols := .Get "cols" | default 0 -}}
+{{- $images := .Page.Resources.ByType "image" -}}
+{{- $gallery := where $images "Name" "like" (printf "%s/" $dir) -}}
+
+{{- if $gallery -}}
+<div class="gallery" data-gallery{{- if gt (int $cols) 0 }} data-cols="{{ $cols }}"{{- end }}>
+    {{- range $gallery -}}
+        {{- $large := .Resize "2400x webp q82" -}}
+        {{- $mid := .Resize "1200x webp q82" -}}
+        {{- $thumb := .Resize "800x webp q82" -}}
+        {{- $srcset := printf "%s 800w, %s 1200w" $thumb.RelPermalink $mid.RelPermalink -}}
+        <figure class="gallery-item">
+            <a href="{{ $large.RelPermalink }}"
+               data-pswp-width="{{ $large.Width }}"
+               data-pswp-height="{{ $large.Height }}"
+               target="_blank">
+                <img src="{{ $thumb.RelPermalink }}"
+                     srcset="{{ $srcset }}"
+                     sizes="(max-width: 600px) 100vw, 33vw"
+                     alt="{{ .Name | path.Base | replaceRE "\\.(webp|jpeg|jpg|png)$" "" }}"
+                     loading="lazy">
+            </a>
+        </figure>
+    {{- end -}}
+</div>
+{{- end -}}

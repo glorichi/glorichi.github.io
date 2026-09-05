@@ -1,0 +1,13 @@
+<script type="module">
+    import PhotoSwipe from "/pswp/photoswipe.esm.min.js";
+    import PhotoSwipeLightbox from "/pswp/photoswipe-lightbox.esm.min.js";
+
+    document.querySelectorAll("[data-gallery]").forEach((g) => {
+        new PhotoSwipeLightbox({
+            gallery: g,
+            children: "a",
+            pswpModule: PhotoSwipe,
+            bgOpacity: 0.9,
+        }).init();
+    });
+</script>

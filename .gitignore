@@ -11,3 +11,6 @@ instruction.md
 
 # Source materials
 source/
+
+# Browser test artifacts
+.playwright-mcp/
