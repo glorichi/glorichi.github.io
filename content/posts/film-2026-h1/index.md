@@ -1,7 +1,7 @@
 +++
 title = '胶片 2026 H1'
 date = '2026-09-05T22:35:00+08:00'
-draft = true
+draft = false
 
 [cover]
 image = "img/01.webp"
