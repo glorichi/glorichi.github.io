@@ -1,4 +1,13 @@
 baseurl = 'https://glorichi.github.io/'
-languagecode = 'zh-cn'
-title = '我的个人博客'
+locale = 'en'
+title = '''Chi's Blog'''
 theme = 'PaperMod'
+
+[outputs]
+home = ['HTML', 'RSS', 'JSON']
+
+[[menu.main]]
+  identifier = 'search'
+  name = 'Search'
+  url = '/search/'
+  weight = 10
